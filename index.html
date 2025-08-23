@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Boda - [NOVIO] & [NOVIA]</title>
+    <style>
+        :root {
+            --primary-color: #ffffff;
+            --secondary-color: #fafafa;
+            --accent-color: #8e7037;
+            --text-color: #333;
+            --light-text: #fff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        body {
+            background: color #e8e8c6;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://uploads.onecompiler.io/43rs9nxpt/43rs9jw3e/WhatsApp%20Image%202025-07-25%20at%208.35.32%20PM.jpeg') no-repeat center center/cover;
+            height: 100vh;
+            color: var(--light-text);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .header-content {
+            padding: 0 20px;
+        }
+        
+        h1 {
+            font-size: 7rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 5rem;
+            margin-bottom: 2rem;
+            font-family: "Great Vibes", cursive;
+        }
+         .subtitle1 {
+            font-size: 2rem;
+            font-family: "Great Vibes", cursive;
+        text-align: center;
+    }
+        .date {
+            font-size: 1.8rem;
+            margin-bottom: 4rem;
+            letter-spacing: 3px;
+        }
+        
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 1rem;
+        }
+        
+        .countdown div {
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        
+        .countdown span {
+            display: block;
+            font-size: 0.8rem;
+        }
+        
+        nav {
+            background-color: var(--primary-color);
+            display: none; /* Initially hidden */
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+        
+        nav a:hover {
+            border-bottom: 2px solid var(--accent-color);
+        }
+        
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: var(--accent-color);
+        }
+        
+        .section-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 5px 5px 25px rgb(239, 229, 37);
+            overflow: hidden;
+            text-align: center;
+            flex: 1;
+            min-width: 400px;
+            max-width: 3000px;
+            transition: transform 0.3s ease;
+        }
+        .card1 {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 5px 5px 25px rgb(239, 229, 37);
+            overflow: hidden;
+            text-align: center;
+            flex: 1;
+            min-width: 400px;
+            max-width: 1200px;
+            min-height: 400px;
+            max-height: 1050px;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .card-video {
+            height: auto;
+            overflow: hidden;
+            text-align: center;
+        }
+         .card-image {
+            height: auto;
+            overflow: hidden;
+            text-align: center;
+        }
+         .card-image img {
+            width: 100%;
+            height:100%;
+            object-fit: cover;
+            transition: transform 1s ease;
+        }
+        
+        .card-imagen5 {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            text-align:center;
+            vertical-align: middle;
+            object-fit: cover;
+            object-position: bottom;
+        }
+        
+        .card-imagen5 img {
+            width: 100%;
+            height:100%;
+            object-fit: cover;
+            transition: transform 1s ease;
+            text-align: center;
+        }
+        
+        .card:hover .card-image img {
+            transform: scale(1.05);
+        }
+        
+        .card-content {
+            padding: 20px;
+            text-align: center;
+            
+        }
+        
+        .card-content h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .detail-item {
+            margin-bottom: 10px;
+            padding: 15px;
+             text-align: center;
+        }
+        
+        .detail-item strong {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--accent-color);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        button {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: #a86969;
+        }
+        .flex-container {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 200px; /*  Opcional, para demostrar centrado vertical */
+  }
+        
+         #contenedor
+      { background-color: var(--accent-color);
+        box-shadow: 5px 5px 25px rgb(0, 0, 0);
+      width:100%;
+      margin:15 px auto;
+      padding:15px;
+      overflow:hidden;
+      }
+      .galeria
+      {
+        width:90%;
+      margin:auto;
+      list-style: none;
+      padding:20px;
+      box-sizing: border-box;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      }
+      .galeria li
+      {
+        margin:5px;
+      }
+      .galeria img
+      {
+        width:200px;
+        height: 200px;
+        object-fit:cover ;
+      }
+      .lightbox
+      {
+        display: none;
+      }
+      .lightbox:target
+      {
+        display: block;
+        position: fixed;
+        background-color: (0,0,0,0.9);
+        top: 0;
+        left:0 ;
+        width:100%;
+        height:100%;
+      }
+      .lightbox h3
+      {
+        color:#000000;
+        font-size:30px;
+        text-align: center;
+        margin: 15px 0;
+      
+      }
+      .imagen
+      {
+        width:100%;
+        height:70%;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+      }
+       h3 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: var(--accent-color);
+        }
+      .imagen a{      
+        color:#FFF;
+        font-size:40px;
+        text-decoration: none;
+        margin: 0 10px;
+}
+ .imagen a nth-child(2){
+   margin: 0;
+   height: 100%;
+   flex-shrink: 2;
+ }
+ .imagen img {
+   width: 500px;
+   height: 100%;
+   max-width: 100%;
+   border: 7px solid #FFF;
+   box-shadow: border-box;
+ }
+ .cerrar
+ {
+   display:block;
+   background-color: #FFF;
+   width: 30px;
+   height: 30px;
+   margin: 15px auto;
+   text-align: center;
+   text-decoration: none;
+   font-size:25px;
+   color: #000;
+   padding: 5px;
+   border-radius: 50%;
+   line-height: 25px;
+ }
+       
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+                margin-bottom: 5rem;
+            }
+            
+            .subtitle {
+                font-size: 2.2rem;
+             
+            }
+            
+            .date {
+                font-size: 1.3rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="login-modal" style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.99);display:flex;justify-content:center;align-items:center;z-index:1000;">
+        <div style="background:white;padding:40px;border-radius:8px;max-width:400px;text-align:center;">
+            <h3 style="color:#8e7037;margin-bottom:20px;">Acceso a la Boda</h3>
+            <input type="password" id="access-code" placeholder="Ingrese código de acceso" style="width:100%;padding:10px;margin-bottom:20px;border:1px solid #ddd;border-radius:4px;">
+            <button onclick="checkAccessCode()" style="background:#8e7037;color:white;border:none;padding:10px 20px;border-radius:4px;cursor:pointer;">Acceder</button>
+        </div>
+    </div>
+    <header style="display:none;">
+        <div class="header-content">
+            <h1>NUESTRA BODA CIVIL</h1>
+            <p class="subtitle">Alexis Y Constanza</p>
+            <p class="date">24 DE ENERO 2026</p>
+            <div class="countdown">
+                <div><span id="days">00</span>Días</div>
+                <div><span id="hours">00</span>Horas</div>
+                <div><span id="minutes">00</span>Minutos</div>
+                <div><span id="seconds">00</span>Segundos</div>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="nav-container">
+            <a href="#detalles">Detalles</a>
+            <a href="#rsvp">Confirmar</a>
+            <a href="#regalos">Regalos</a>
+        </div>
+    </nav>
+    
+    <section id="nuestra-historia">
+        <h2>NUESTRA HISTORIA</h2>
+        <div class="section-content">
+            <div class="card">
+                <div class="card-image" width="1000px" >
+                    <img src="https://uploads.onecompiler.io/43rs9nxpt/43rs9jw3e/WhatsApp%20Image%202025-07-25%20at%208.33.19%20PM.jpeg" class="card-image-top" width=50% ; alt="nuestra primer foto juntos" />
+                <div class="card-content">
+                   <h3>CÓMO NOS CONOCIMOS</h3>
+                    <p>Nos conocimos en febrero de 2023, pero fue el 5 de marzo, en plena vendimia, cuando todo realmente comenzó. Ese día, entre racimos maduros y los primeros rayos de sol al amanecer, nuestras miradas se encontraron de verdad, y desde entonces, como viñas entrelazadas en la misma tierra, no volvimos a soltarnos nunca más.</p>
+                </div>
+            </div>
+            </div>
+            </div>
+            </section>
+
+                <section ID="CONOCERNOS">
+                <div class="card">
+                <div class="card-video">
+                    <video src="video propuesta.mp4" loop controls type:"video/mp4" Pareja en un momento romántico con la propuesta de matrimonio en un ambiente especial" />
+                </div>
+                <div class="card-content">
+                    <h3>LA PROPUESTA</h3>
+                    <p>Un 12 de julio marcó un año desde que comenzó nuestra aventura más formal. Lo que muchos verían como pronto, para Alexis fue certeza: si en un año el amor florece así, ¿cómo no quererlo para siempre? Durante un mes tejió en secreto su promesa, entre cómplices y susurros, buscando el anillo perfecto. No era apresurado, era claro: si un año bastó para amarme así, quería amarme toda la vida. </p>
+                </div>
+            </div>
+            
+    </section>
+    
+    <section id="detalles">
+        <h2>DETALLES DE LA BODA</h2>
+        <div class="section-content">
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://uploads.onecompiler.io/43rs9nxpt/43rs9jw3e/WhatsApp%20Image%202025-07-25%20at%208.53.22%20PM.jpeg" alt="vña 7 wines, lugar del evento" />
+                </div>
+                <div class="card-content">
+                    <h3>CEREMONIA</h3>
+                    <div class="detail-item">
+                        <strong>FECHA Y HORA</strong>
+                        <p>24 DE ENERO DE 2026 A LAS 16:00 HRS.</p>
+                    </div>
+                    <div class="detail-item">
+                        <strong>LUGAR</strong>
+                       <a href="https://maps.app.goo.gl/bfGv4dHox1nANbZG8" style="display: block;"; style="text-align: center;">VIÑA SIETE WINES</a>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d470.8222540101708!2d-71.36314317309508!3d-34.69218875569946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1svi%C3%B1a%20siete%20wines!5e1!3m2!1ses-419!2scl!4v1753493474503!5m2!1ses-419!2scl" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        
+                         </div>
+                    <div class="detail-item">
+                        <strong>CÓDIGO DE VESTIMENTA</strong>
+                        <p>FORMAL GAMA DE COLOR PREFERENTEMENTE AZUL, EXCEPTO BLANCO</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="imagen5">
+            <div class="card1">
+                <div class="card-imagen5">
+                    <img src="WhatsApp Image 2025-08-02 at 11.17.27 PM.jpeg" alt="beso apasionado con la camara dentro de un corazon de nieve" />
+                </div>
+            </div>
+    </section>
+    <section id="rsvp">
+        <div class="card">
+        <h2>Confirma tu asistencia</h2>
+        <p style="text-align: center; margin-bottom: 20px; font-style: italic;">
+            Fecha límite para confirmar: 12 de Noviembre 2025
+            <br>
+            <span id="confirmation-days">00</span> días restantes
+        </p>
+        
+  <div class="flex-container">
+       <a href="https://wa.me/56946747856?text=hola%20soy%20%20y%20confirmo%20que%20%20asistire%20a%20la%20boda">DIRECTO AL WHATSAPP CON CONSTANZA.</a>
+     </div>
+    </div>
+</section>
+    
+    <section id="regalos">
+        <h2>Lista de Regalos</h2>
+        <div class="section-content">
+            <div class="card">
+                <div class="card-content">
+                    <h3>Nuestros Deseos</h3>
+                    <p>Su presencia en nuestro día especial es el mejor regalo que podríamos pedir. Sin embargo, si desean contribuir a nuestro futuro juntos, hemos creado las siguientes opciones:</p>
+                    
+                    <div class="detail-item">
+                    </div>
+                    
+                    <p style="font-style:italic;">Si desean hacernos un regalo, agradecemos su generosidad a través de:</p>
+                                        <div class="detail-item">
+                        <strong>Cuenta de regalo y Sobres en la recepción</strong>
+                        <p>Tendremos sobres disponibles el día del evento.</p>
+                    </div>
+                    <div class="detail-item">
+                        <strong>Transferencia bancaria</strong>
+                        <p>Banco: Falabella</p>
+                        <p>Cuenta:1-999-266836-9</p>
+                        <p>Tipo de cuenta: Corriente</p>
+                        <p>A nombre de:Alexis Adasme Riveros</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+      <div id="contenedor">
+       <h2 style="color: #FFF;">Galería</h2>
+       <p class="subtitle1" style="color: #FFF;">Nuestras fotos favoritas</p>
+      <ul class="galeria">
+      <li><a href= "#imagen1"><img src="https://uploads.onecompiler.io/43rs9nxpt/43rs9jw3e/WhatsApp%20Image%202025-07-25%20at%208.34.20%20PM.jpeg"></a></li>
+     <li><a href= "#imagen2" ><img src="https://uploads.onecompiler.io/43rs9nxpt/43rs9jw3e/WhatsApp%20Image%202025-07-24%20at%2010.15.01%20PM.jpeg" onclick="openLightbox('imagen2')"></a></li>
+     <li><a href= "#imagen3"><img src="https://uploads.onecompiler.io/43rs9nxpt/43rs9jw3e/WhatsApp%20Image%202025-07-25%20at%208.38.11%20PM.jpeg"></a></li>
+     <li><a href= "#imagen4"><img src="https://uploads.onecompiler.io/43rs9nxpt/43rs9jw3e/WhatsApp%20Image%202025-07-25%20at%208.34.49%20PM.jpeg"></a></li>
+     <li><a href= "#imagen5"><img src="https://uploads.onecompiler.io/43rs9nxpt/43rs9jw3e/WhatsApp%20Image%202025-07-25%20at%208.34.32%20PM.jpeg"></a></li>
+     <li><a href= "#imagen6"><img src="https://uploads.onecompiler.io/43rs9nxpt/43rs9jw3e/WhatsApp%20Image%202025-07-25%20at%208.35.54%20PM.jpeg"></a></li>
+     <li><a href= "#imagen7"><img src="https://uploads.onecompiler.io/43rs9nxpt/43s37rkc7/WhatsApp%20Image%202025-07-28%20at%209.01.10%20PM.jpeg"></a></li>
+     <li><a href= "#imagen8"><img src="https://uploads.onecompiler.io/43rs9nxpt/43s37rkc7/WhatsApp%20Image%202025-07-28%20at%209.01.49%20PM.jpeg"></a></li>
+     
+     <div class="lightbox" id="imagen1">
+       <h3>Arena gruesa Ancud en nuestra primera visita juntos a la isla</h3>
+      <div class="imagen">
+        <img src="https://uploads.onecompiler.io/43rs9nxpt/43rs9jw3e/WhatsApp%20Image%202025-07-25%20at%208.34.20%20PM.jpeg">
+      </div>
+      <a href="#" class="cerrar">X</a>
+     </div>
+     
+      <div class="lightbox" id="imagen2">
+       <h3>Primera foto en la playa </h3>
+     <div class="imagen">
+        <img src="https://uploads.onecompiler.io/43rs9nxpt/43rs9jw3e/WhatsApp%20Image%202025-07-24%20at%2010.15.01%20PM.jpeg">
+      </div>
+      <a href="#" onclick="cerrarLightbox(); return false;" class="cerrar">X</a>
+     </div>
+     
+     <div class="lightbox" id="imagen3">
+       <h3>segundo aniversario y entrega de argolla a Alexis</h3>
+     <div class="imagen">
+        <img src="https://uploads.onecompiler.io/43rs9nxpt/43rs9jw3e/WhatsApp%20Image%202025-07-25%20at%208.38.11%20PM.jpeg">
+      </div>
+      <a href="#" class="cerrar">X</a>
+     </div>
+     
+     <div class="lightbox" id="imagen4">
+       <h3>viaje a Pichilemu, febrero 2024</h3>
+     <div class="imagen">
+        <img src="https://uploads.onecompiler.io/43rs9nxpt/43rs9jw3e/WhatsApp%20Image%202025-07-25%20at%208.34.49%20PM.jpeg">
+      </div>
+      <a href="#" class="cerrar">X</a>
+     </div>
+     
+     <div class="lightbox" id="imagen5">
+       <h3>Chonchi, Chiloe 2023</h3>
+     <div class="imagen">
+        <img src="https://uploads.onecompiler.io/43rs9nxpt/43rs9jw3e/WhatsApp%20Image%202025-07-25%20at%208.34.32%20PM.jpeg">
+      </div>
+      <a href="#" class="cerrar">X</a>
+     </div>
+     
+     <div class="lightbox" id="imagen6">
+       <h3>Primer viaje a la nieve en laguna del Maule, Agosto 2024</h3>
+     <div class="imagen">
+        <img src="https://uploads.onecompiler.io/43rs9nxpt/43rs9jw3e/WhatsApp%20Image%202025-07-25%20at%208.35.54%20PM.jpeg">
+      </div>
+      <a href="#" class="cerrar">X</a>
+     </div>
+     
+     <div class="lightbox" id="imagen7">
+       <h3>A la nieve en familia</h3>
+     <div class="imagen">
+        <img src="https://uploads.onecompiler.io/43rs9nxpt/43s37rkc7/WhatsApp%20Image%202025-07-28%20at%209.01.10%20PM.jpeg">
+      </div>
+      <a href="#" class="cerrar">X</a>
+     </div>
+     
+     <div class="lightbox" id="imagen8">
+       <h3>Costnera Ancud 2024</h3>
+     <div class="imagen">
+        <img src="https://uploads.onecompiler.io/43rs9nxpt/43s37rkc7/WhatsApp%20Image%202025-07-28%20at%209.01.49%20PM.jpeg">
+      </div>
+      <a href="#" class="cerrar">X</a>
+     </div>
+     
+     <div class="lightbox" id="imagen1">
+       <h3>Arena gruesa Ancud en nuestra primera visita a la isla</h3>
+     <div class="imagen">
+        <img src="https://uploads.onecompiler.io/43rs9nxpt/43rs9jw3e/WhatsApp%20Image%202025-07-25%20at%208.34.32%20PM.jpeg">
+      </div>
+      <a href="#" class="cerrar">X</a>
+     </div>
+      </ul>
+    </div>
+    <section id="contactos">
+                 <h2>Contacto</h2>
+           <h3>Directamente con los novios</h3>
+            <div class="detail-item">
+                <strong> Alexis</strong>
+                <p>+56949277568</p>
+                <p>adasme75@gmail.com</p>
+              </div>
+           <div class="detail-item">
+       <strong>Constanza</strong>
+        <p>+56946747856</p>
+       <p>konycucumides@hotmail.cl</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>© 2023 Alexis&Constanza- Todos los derechos reservados</p>
+        <p>Gracias por compartir este momento tan especial con nosotros</p>
+    </footer>
+
+    <script>
+        // Contador regresivo boda
+        function updateWeddingCountdown() {
+            const weddingDate = new Date(2026, 0, 24).getTime();
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        // Contador regresivo confirmación
+        function updateConfirmationCountdown() {
+            const confirmationDate = new Date(2025, 10, 12).getTime(); // 12 Nov 2025
+            const now = new Date().getTime();
+            const distance = confirmationDate - now;
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            document.getElementById('confirmation-days').textContent = days;
+        }
+
+        // Actualizar cada segundo
+        setInterval(updateWeddingCountdown, 1000);
+        setInterval(updateConfirmationCountdown, 1000);
+        updateWeddingCountdown();
+        updateConfirmationCountdown();
+
+        // Smooth scrolling para los enlaces del menú
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                menu.showModal();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Check access code
+        function checkAccessCode() {
+            const correctCode = "1207"; // Código de acceso especial
+            const enteredCode = document.getElementById('access-code').value;
+            
+            if(enteredCode === correctCode) {
+                document.getElementById('login-modal').style.display = 'none';
+                document.querySelector('header').style.display = 'flex';
+            } else {
+                alert("Código incorrecto. Intente nuevamente.");
+            }
+        }
+            // funcion para abrir y cerrar las imagenes de la galeria y no vuelva al principio//
+             function Lightbox() {
+    // Guarda la posición del scroll
+    scrollPosition = window.pageYOffset;
+
+    // ... (código para abrir el lightbox) ...
+  }
+            
+            
+            
+            
+  function cerrarLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+    document.body.style.overflow = 'auto';
+    window.scrollTo(0, scrollPosition);
+  }
+    </script>
+</body>
+</html>
